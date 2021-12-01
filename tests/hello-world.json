@@ -1,0 +1,9 @@
+{
+  "description": "A simple test that invoked POST on the hello-world example",
+  "pathname": "v1/hello-world",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\n    \"test\" : \"this should be saved to storage\"\n}"
+}

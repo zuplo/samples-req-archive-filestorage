@@ -1,0 +1,10 @@
+{
+  "environmentVariables": {
+    "BLOB_CREATE_SAS": {
+      "variableType": "Secret"
+    },
+    "BLOB_CONTAINER_PATH": {
+      "variableType": "Config"
+    }
+  }
+}
