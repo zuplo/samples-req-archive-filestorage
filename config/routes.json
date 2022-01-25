@@ -2,7 +2,7 @@
   "routes": [
     {
       "label": "What zup?",
-      "path": "hello-world",
+      "path": "/hello-world",
       "handler": {
         "export": "default",
         "module": "$import(./modules/hello-world)"
@@ -10,14 +10,13 @@
       "methods": [
         "POST"
       ],
-      "corsPolicy": "AnythingGoes",
+      "corsPolicy": "anything-goes",
       "version": "v1",
       "policies": {
         "inbound": [
          "request-archive-policy"
         ]
-      },
-      "key": "1d4f274f-9d3b-47ec-9e71-a8529ed0ff8b"
+      }
     }
   ],
   "versions": [
@@ -27,7 +26,7 @@
     },
     {
       "name": "v1",
-      "pathPrefix": "v1/"
+      "pathPrefix": "/v1"
     }
   ],
   "policies": [
@@ -38,8 +37,8 @@
         "export": "default",
         "module": "$import(./modules/archive-request-policy)",
         "options": {
-          "blobContainerPath": "$env(BLOB_CONTAINER_PATH)",
-          "blobCreateSas": "$env(BLOB_CREATE_SAS)"
+          "blobContainerPath": "<blob-container-path>",
+          "blobCreateSas": "<blob-create-SAS>"
         }
       }
     }
