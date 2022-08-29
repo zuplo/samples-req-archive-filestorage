@@ -1,0 +1,15 @@
+name: Main
+on: [deployment_status]
+
+jobs:
+  test:
+    name: Test API Gateway
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Echo github obj
+        run: echo '${{ toJson(github.event) }}'
+
+      - name: Run Tests
+        # Useful properties 'environment', 'state', and 'environment_url'
+        run: API_URL=${{ toJson(github.event.deployment_status.environment_url) }} npm run test

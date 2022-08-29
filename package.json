@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "zuplo dev",
     "build": "zuplo build",
-    "test": "zuplo test",
+    "test": "mocha",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -14,12 +14,11 @@
     "@zuplo/runtime": "*"
   },
   "devDependencies": {
-    "husky": "^8.0.1"
-  },
-  "packageManager": "yarn@3.1.0",
-  "resolutions": {
-    "@zuplo/core": "portal:/Users/josh/dev/zuplo/core/packages/core",
-    "@zuplo/runtime": "portal:/Users/josh/dev/zuplo/core/packages/runtime",
-    "@zuplo/internal": "portal:/Users/josh/dev/zuplo/core/packages/internal"
+    "@types/mocha": "^9.1.1",
+    "chai": "^4.3.6",
+    "husky": "^8.0.1",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "undici": "^5.10.0"
   }
 }

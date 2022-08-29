@@ -1,11 +1,11 @@
-import { ZuploRequest } from "@zuplo/runtime";
+import { ZuploContext, ZuploRequest } from "@zuplo/runtime";
 
 export type RequestArchivePolicyOptions = {
 	blobContainerPath: string;
 	blobCreateSas: string;
 }
 
-export default async function (request: ZuploRequest, options: RequestArchivePolicyOptions) {
+export default async function (request: ZuploRequest, context: ZuploContext, options: RequestArchivePolicyOptions) {
 	// because we will read the body, we need to 
 	// create a clone of this request first, otherwise
 	// there may be two attempts to read the body
@@ -14,7 +14,7 @@ export default async function (request: ZuploRequest, options: RequestArchivePol
 	const body = await clone.text();
 
 	// let's generate a unique blob name based on the date and requestId
-	const blobName = `${Date.now()}-${request.requestId}.req.txt`;
+	const blobName = `${Date.now()}-${context.requestId}.req.txt`;
 
 	const url = `${options.blobContainerPath}/${blobName}?${options.blobCreateSas}`;
 
@@ -32,7 +32,7 @@ export default async function (request: ZuploRequest, options: RequestArchivePol
 			status: result.status,
 			body: await result.text()
 		}
-		request.logger.error(err);
+		context.log.error(err);
 	}
 
 	// continue
