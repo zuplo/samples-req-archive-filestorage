@@ -5,7 +5,11 @@ jobs:
   test:
     name: Test API Gateway
     runs-on: ubuntu-latest
-    
+
+    defaults:
+      run:
+        working-directory: ".test"
+
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -14,7 +18,7 @@ jobs:
           node-version: 16.x
           cache: "npm"
 
-      - run: npm install typescript chia mocha ts-node undici -g
+      - run: npm install
 
       - name: Run Tests
         # Useful properties 'environment', 'state', and 'environment_url'

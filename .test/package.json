@@ -1,0 +1,18 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sample.spec.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "devDependencies": {
+    "@types/mocha": "^9.1.1",
+    "chai": "^4.3.6",
+    "husky": "^8.0.1",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "undici": "^5.10.0"
+  }
+}
