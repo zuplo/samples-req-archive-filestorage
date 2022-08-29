@@ -1,6 +1,5 @@
 name: Test
-on:
-  deployment
+on: [deployment, deployment_status]
 
 jobs:
   test:
@@ -9,4 +8,4 @@ jobs:
     
     steps:
       - name: Echo github obj
-        run: echo ${{ toJson(github) }}
+        run: echo ${{ toJson(github.event.deployment) }}
