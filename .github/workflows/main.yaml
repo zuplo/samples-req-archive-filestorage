@@ -14,7 +14,7 @@ jobs:
           node-version: 16.x
           cache: "npm"
 
-      - run: npm install
+      - run: npm install --only=dev
 
       - name: Run Tests
         # Useful properties 'environment', 'state', and 'environment_url'
