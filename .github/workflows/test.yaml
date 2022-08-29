@@ -1,0 +1,12 @@
+name: Test
+on:
+  deployment
+
+jobs:
+  test:
+    name: Test API Gateway
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Echo github obj
+        run: echo ${{ toJson(github) }}
