@@ -22,4 +22,4 @@ jobs:
 
       - name: Run Tests
         # Useful properties 'environment', 'state', and 'environment_url'
-        run: API_URL=${{ toJson(github.event.deployment_status.environment_url) }} mocha test
+        run: API_URL=${{ toJson(github.event.deployment_status.environment_url) }} npm run test
