@@ -8,4 +8,4 @@ jobs:
     
     steps:
       - name: Echo github obj
-        run: echo ${{ toJson(github.event.deployment) }}
+        run: echo ${{ github.event.deployment }}
