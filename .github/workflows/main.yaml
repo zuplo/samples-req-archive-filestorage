@@ -14,8 +14,8 @@ jobs:
           node-version: 16.x
           cache: "npm"
 
-      - run: npm install chia mocha ts-node undici -D
+      - run: npm install chia mocha ts-node undici -g
 
       - name: Run Tests
         # Useful properties 'environment', 'state', and 'environment_url'
-        run: API_URL=${{ toJson(github.event.deployment_status.environment_url) }} npm run test
+        run: API_URL=${{ toJson(github.event.deployment_status.environment_url) }} mocha test
