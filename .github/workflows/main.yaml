@@ -14,6 +14,8 @@ jobs:
           node-version: 16.x
           cache: "npm"
 
+      - run: npm install
+
       - name: Run Tests
         # Useful properties 'environment', 'state', and 'environment_url'
         run: API_URL=${{ toJson(github.event.deployment_status.environment_url) }} npm run test
